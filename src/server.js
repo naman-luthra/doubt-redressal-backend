@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 8080;
 const cors = require('cors');
 
 app.use(cors({
-    origin: 'http://localhost:3000'
+    origin: 'https://doubt-redresser.netlify.app'
 }));
 
 Routes.forEach(Route=>app[Route.method](Route.path, Route.handler));
