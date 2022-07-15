@@ -7,7 +7,7 @@ export const signIn = {
     method: 'post',
     handler: async (req, res)=>{
         const { email, password } = req.body;
-        const client = getConnectionToDB('auth-db');
+        const db = getConnectionToDB('auth-db');
         const user = await db.collection('users').findOne({ email });
         if (!user) {
             return res.sendStatus(401);
